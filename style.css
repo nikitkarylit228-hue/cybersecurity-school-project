@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
+    color: #e0e0e0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.presentation-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-content {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(25, 25, 40, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2a4a;
+}
+
+h1 {
+    color: #4dabf7;
+    font-size: 3.2em;
+    margin: 30px 0;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(77, 171, 247, 0.3);
+}
+
+h2 {
+    color: #40c057;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #40c057;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #ff922b;
+    font-size: 1.8em;
+    margin: 20px 0 15px;
+}
+
+/* Слайд 1 */
+#slide1 .slide-content {
+    text-align: center;
+    background: rgba(10, 15, 30, 0.9);
+}
+
+.school-header h3 {
+    color: #74c0fc;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.author-info {
+    background: rgba(40, 45, 70, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.author-info p {
+    font-size: 1.3em;
+    margin: 10px 0;
+    color: #adb5bd;
+}
+
+.nav-hint {
+    margin-top: 40px;
+    color: #868e96;
+    font-style: italic;
+}
+
+/* Слайд 2 */
+.icon-list {
+    list-style: none;
+    font-size: 1.4em;
+    line-height: 1.8;
+}
+
+.icon-list li {
+    margin: 20px 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+.icon-list i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #ff6b6b;
+    font-size: 1.2em;
+}
+
+/* Слайд 3 */
+.threats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.threat-card {
+    background: rgba(50, 55, 80, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #3b3b6d;
+}
+
+.threat-card:hover {
+    transform: translateY(-5px);
+    border-color: #4dabf7;
+}
+
+.threat-card i {
+    font-size: 2.5em;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.threat-card h3 {
+    color: #ff922b;
+    margin-bottom: 10px;
+}
+
+/* Слайд 4 */
+.highlight {
+    background: linear-gradient(90deg, #ff6b6b, #ff922b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.victim-reasons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.reason {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    background: rgba(60, 65, 90, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.reason i {
+    font-size: 2.8em;
+    color: #40c057;
+    margin-bottom: 15px;
+}
+
+/* Слайд 5 */
+.attack-example {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    background: rgba(60, 65, 90, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #ff922b;
+}
+
+.step-number {
+    background: #ff922b;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Слайд 6 */
+.rules-list {
+    font-size: 1.4em;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.rules-list li {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.rule-number {
+    background: #40c057;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* Слайд 7 */
+.action-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.action {
+    background: rgba(60, 65, 90, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid #4dabf7;
+}
+
+.action h3 {
+    color: #74c0fc;
+    margin-bottom: 15px;
+}
+
+.advice {
+    font-size: 1.3em;
+    color: #ffd43b;
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Слайд 8 */
+.professions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.profession {
+    background: rgba(50, 55, 80, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.profession h3 {
+    color: #da77f2;
+}
+
+.education {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(40, 45, 70, 0.7);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Слайд 9 */
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    background: rgba(60, 65, 90, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.result-item i {
+    color: #da77f2;
+    font-size: 1.8em;
+    margin-right: 20px;
+}
+
+.conclusion {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(40, 45, 70, 0.8);
+    border-radius: 15px;
+    border: 2px solid #40c057;
+}
+
+/* Слайд 10 */
+#slide10 .slide-content {
+    text-align: center;
+}
+
+.final-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.contact-info, .qr-section, .github-link {
+    background: rgba(40, 45, 70, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.qr-placeholder {
+    margin: 20px auto;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.qr-inner {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, #000, #000 2px, #fff 2px, #fff 4px);
+}
+
+.questions {
+    margin-top: 50px;
+    color: #ff922b;
+}
+
+/* Навигация */
+.nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(77, 171, 247, 0.2);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.nav-button:hover {
+    background: rgba(77, 171, 247, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.slide-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slide {
+        padding: 15px;
+    }
+    
+    .slide-content {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    .threats-grid, .results {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .final-content {
+        grid-template-columns: 1fr;
+    }
+}
